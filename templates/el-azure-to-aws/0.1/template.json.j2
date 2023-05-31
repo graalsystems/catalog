@@ -1,0 +1,48 @@
+{
+  "id": "dag1",
+  "tasks": [
+    {
+      "id": "task1",
+      "type": "read",
+      "params": {
+        "type": "file",
+        "object": {
+          "header": true,
+          "type": "{{ read_type }}",
+          "path": "{{ read_path }}"
+        },
+        "connector": {
+          "type": "azure",
+          "options": {
+            "storage_name": "{{ storage_name }}",
+            "sas_token": "{{ sas_token }}",
+            "container": "{{ azure_container }}"
+          }
+        },
+        "structure": {{ data_structure }}
+      }
+    },
+    {
+      "id": "task2",
+      "type": "write",
+      "dependency": ["task1"],
+      "params": {
+        "type": "file",
+        "object": {
+          "header": true,
+          "type": "{{ write_type }}",
+          "path": "{{ write_path }}"
+        },
+        "connector": {
+          "type": "s3",
+          "options": {
+
+            "bucket": " {{s3_bucket }}",
+            "access_key": "{{ s3_access_key }}",
+            "secret_key": "{{ s3_secret_key }}",
+          }
+        } 
+      }
+    }
+  ]
+}
