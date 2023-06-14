@@ -1,7 +1,6 @@
 name: el-azure-to-aws
-id: 0002
-description: Extract data from Azure Blob Storage and load them in AWS S3.
 version: 0.1
+description: Extract data from Azure Blob Storage and load them in AWS S3.
 parameters:
   - name: data_structure
     type: dict
@@ -14,19 +13,19 @@ parameters:
   - name: read_path
     type: str
     description: The path of the file to read.
-    example: ...
+    example: path/to/file
   - name: storage_name
     type: str
     description: The storage name of the Azure Blob storage.
-    example: ...
+    example: my_storage_name
   - name: sas_token
     type: str
     description: The SAS Token to access the storage.
-    example: ...
+    example: my_sas_token
   - name: azure_container
     type: str
     description: The container name of the Blob Storage.
-    example: ...
+    example: my_azure_container
   - name: write_type
     type: str
     description: The type to write the result in.
@@ -34,16 +33,16 @@ parameters:
   - name: write_path
     type: str
     description: The path of the result file.
-    example: ...
+    example: path/to/result/file
   - name: s3_bucket
     type: str
     description: The name of the S3 Bucket where the data is located.
-    example: ...
+    example: my_s3_bucket
   - name: s3_access_key
     type: str
     description: The S3 Bucket access key.
-    example: ...
+    example: my_s3_access_key
   - name: s3_secret_key
     type: str
     description: The S3 Bucket secret key.
-    example: ...
+    example: my_s3_secret_key
