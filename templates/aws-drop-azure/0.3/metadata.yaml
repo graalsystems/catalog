@@ -1,0 +1,52 @@
+name: aws-drop-azure
+version: 0.2
+description: Extract data from AWS S3 and load them in Azure Blob Storage. This is the third version of the template.
+parameters:
+  - name: data_structure
+    type: list
+    description: The schema of the data to extract.
+    example: [{"name": "column_1","type": "str"},{"name": "column_2","type": "int32"}]
+  - name: drop_columns
+    type: list
+    description: The list of columns to drop.
+    example: ["column_1", "column_2"]
+  - name: read_type
+    type: str
+    description: The type of the file to read.
+    example: csv
+  - name: read_path
+    type: str
+    description: The path of the file to read.
+    example: path/to/file
+  - name: s3_bucket
+    type: str
+    description: The name of the S3 Bucket where the data is located.
+    example: my_s3_bucket
+  - name: s3_access_key
+    type: str
+    description: The S3 Bucket access key.
+    example: my_s3_access_key
+  - name: s3_secret_key
+    type: str
+    description: The S3 Bucket secret key.
+    example: my_s3_secret_key
+  - name: write_type
+    type: str
+    description: The type to write the result in.
+    example: csv
+  - name: write_path
+    type: str
+    description: The path of the result file.
+    example: path/to/result/file
+  - name: storage_name
+    type: str
+    description: The storage name of the Azure Blob storage.
+    example: my_storage_name
+  - name: sas_token
+    type: str
+    description: The SAS Token to access the storage.
+    example: my_sas_token
+  - name: azure_container
+    type: str
+    description: The container name of the Blob Storage.
+    example: my_azure_container
